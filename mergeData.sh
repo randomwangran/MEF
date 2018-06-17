@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-test=$(find . -maxdepth 1 -type d -regextype sed -regex ".*" | cut -c 3-)
+test=$(find . -maxdepth 1 -type d -regextype sed -regex '.*' -not -path '*/\.*' | cut -c 3-)
 
 echo $test
 
@@ -30,6 +30,8 @@ echo "${a[3]}"
 echo "Creating the tmp data"
 
 cd "${a[0]}"
+pwd
+
 cp -f ./forceCoeffs_bins.dat ../forceCoeffs_bins.dat.tmp
 cp -f ./forceCoeffs.dat ../forceCoeffs.dat.tmp
 cd ..

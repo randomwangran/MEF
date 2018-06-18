@@ -49,7 +49,7 @@ do
     
     latestTime=$(tac ../forceCoeffs.dat.tmp |egrep -m 1 . | head -n1 | awk '{print $1;}')
 
-    latestTimeLineNum=$(grep -nw $latestTime forceCoeffs.dat |gawk '{print $1}' FS=":")
+    latestTimeLineNum=$(grep -nw "$latestTime " forceCoeffs.dat |gawk '{print $1}' FS=":")
 
     (( latestTimeLineNum += nextLine))
 
@@ -122,7 +122,7 @@ do
     
     latestTime=$(tac ../forceCoeffs_bins.dat.tmp |egrep -m 1 . | head -n1 | awk '{print $1;}')
 
-    latestTimeLineNum=$(grep -nw $latestTime forceCoeffs_bins.dat |gawk '{print $1}' FS=":")
+    latestTimeLineNum=$(grep -nw "$latestTime " forceCoeffs_bins.dat |gawk '{print $1}' FS=":")
 
     (( latestTimeLineNum += nextLine))
 
@@ -142,3 +142,21 @@ do
 done
 
 echo "The forece_bins.dat has been merged."
+
+
+## check the unnecessary data ( genereted by not considering the time data without overlaps )
+
+echo "check the unncessary data"
+
+## processing span-wise averaged data
+tail -n +10 forceCoeffs.dat.tmp |  grep -v '^#'  > forceCoeffs.dat.onlyTime &&
+sed '10,$ d' forceCoeffs.dat.tmp > forceCoeffs.dat.onlyHead &&
+cat forceCoeffs.dat.onlyTime >> forceCoeffs.dat.onlyHead &&
+mv -f forceCoeffs.dat.onlyHead forceCoeffs.dat.merged
+
+
+## processing span-wise averaged data
+tail -n +10 forceCoeffs_bins.dat.tmp |  grep -v '^#'  > forceCoeffs_bins.dat.onlyTime &&
+sed '10,$ d' forceCoeffs_bins.dat.tmp > forceCoeffs_bins.dat.onlyHead &&
+cat forceCoeffs_bins.dat.onlyTime >> forceCoeffs_bins.dat.onlyHead &&
+mv -f forceCoeffs_bins.dat.onlyHead forceCoeffs_bins.dat.merged

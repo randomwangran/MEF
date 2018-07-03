@@ -1,10 +1,10 @@
 #!/bin/bash -   
-#title          :merge_force_coefficient_data_from_separated_time_foler.sh
+#title          :mergeData
 #description    :merge coefficients into one file
 #author         :Ran Wang
 #date           :20180703
 #version        :0.0    
-#usage          :./merge_force_coefficient_data_from_separated_time_foler.sh
+#usage          :sh ./mergeData
 #notes          :       
 #bash_version   :4.1.2(1)-release
 #============================================================================

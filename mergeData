@@ -11,6 +11,19 @@
 
 
 
+parentFolderName=${PWD##*/}
+
+if [ "$parentFolderName" = "forces" ]; then
+
+    echo "Finding force data"
+
+else
+
+    echo "You need to put this script under the forces folder" &&
+
+    exit;
+fi;
+
 test=$(find . \
 	    -maxdepth 1 \
 	    -type d \

@@ -4,7 +4,7 @@
 #author         :Ran Wang
 #date           :20180703
 #version        :0.0
-#usage          :sh ./mergeData.sh
+#usage          :sh ./mergeData
 #notes          :
 #bash_version   :4.1.2(1)-release
 #============================================================================

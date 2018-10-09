@@ -1,6 +1,6 @@
-This is a shell script to merge separated force coefficient data genearted by OpenFOAM. 
+This is a shell script to merge separated force coefficient data genearted by OpenFOAM (v4.1). 
 
-OpenFOAM separates the force coefficient data when the simulations restart. If you have many time folders in your `postProcessing/forceCoeffs` folder, this script will perhaps save your time.
+OpenFOAM (v4.1) separates the force coefficient data when the simulations restart. If you have many time folders in your `postProcessing/forceCoeffs` folder, this script will perhaps save your time.
 
 
 ## Usage:

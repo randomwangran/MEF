@@ -16,7 +16,6 @@ forces
 │   └── forceCoeffs.dat
 ├── 45
 │   ├── forceCoeffs_bins.dat
-│   ├── #forceCoeffs.dat#
 │   └── forceCoeffs.dat
 ├── 90
 │   ├── forceCoeffs_bins.dat

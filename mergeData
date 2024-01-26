@@ -207,13 +207,13 @@ echo "check the unncessary data"
 tail -n +10 forceCoeffs.dat.tmp |  grep -v '^#'  > forceCoeffs.dat.onlyTime &&
     sed '10,$ d' forceCoeffs.dat.tmp > forceCoeffs.dat.onlyHead &&
     cat forceCoeffs.dat.onlyTime >> forceCoeffs.dat.onlyHead &&
-    mv -f forceCoeffs.dat.onlyHead forceCoeffs.dat.merged
+    mv -f forceCoeffs.dat.onlyHead forceCoeffs.dat
 
 ## processing span-wise averaged data
 tail -n +10 forceCoeffs_bins.dat.tmp |  grep -v '^#'  > forceCoeffs_bins.dat.onlyTime &&
     sed '10,$ d' forceCoeffs_bins.dat.tmp > forceCoeffs_bins.dat.onlyHead &&
     cat forceCoeffs_bins.dat.onlyTime >> forceCoeffs_bins.dat.onlyHead &&
-    mv -f forceCoeffs_bins.dat.onlyHead forceCoeffs_bins.dat.merged
+    mv -f forceCoeffs_bins.dat.onlyHead forceCoeffs_bins.dat
 
 ## delete temproal files
 
